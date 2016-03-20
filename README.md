@@ -1,11 +1,12 @@
 ---
 layout: page
 title: Jasper
-cover: /images/covers/welcome.jpg
 image: /images/covers/welcome.jpg
 excerpt: Jekyll port of Casper, the Medium-like Ghost default’s theme.
 ---
 Jekyll port of [Casper](https://github.com/TryGhost/Casper), the [Medium](https://medium.com/)-like [Ghost](https://github.com/TryGhost/Ghost) default's theme.
+
+![Jasper Screenshot](images/screenshot.png)
 
 ## Demo
 
