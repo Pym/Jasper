@@ -1,0 +1,23 @@
+{% assign author = site.data.authors[page.author] %}
+
+{% if author.gravatar %}
+{% capture author_image %}http://www.gravatar.com/avatar/{{ author.gravatar }}?size=128{% endcapture %}
+{% endif %}
+
+{% assign author_page_path = author.slug | prepend: '/author/' | prepend: site.baseurl %}
+
+{% if author_image %}
+<figure class="author-image">
+  <a class="img" href="{{ author_page_path }}" style="background-image: url({{ author_image }})"><span class="hidden">{{ author.name }}'s Picture</span></a>
+</figure>
+{% endif %}
+
+<section class="author">
+  <h4><a href="{{ author_page_path }}">{{ author.name }}</a></h4>
+{% if author.bio %}
+  <p>{{ author.bio }}</p>
+{% else %}
+  <p>Read <a href="{{ author_page_path }}">more posts</a> by this author.</p>
+{% endif %}
+{% include author-meta.html %}
+</section>

@@ -1,0 +1,16 @@
+---
+# Jasper Main SCSS
+---
+
+// From the Jekyll default theme
+//------------------------------
+
+@import "syntax-highlighting";
+
+// Custom CSS below
+// ----------------
+{% if site.header.text_shadow %}
+.main-header-content {
+  text-shadow: {{ site.header.text_shadow }};
+}
+{% endif %}

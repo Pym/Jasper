@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+
+  {% capture template %}
+    {% if page.post_class %}
+      {{ page.post_class }}
+    {% elsif layout.post_class %}
+      {{ layout.post_class }}
+    {% elsif page.post_class == nil %}
+      {% if paginator.page != 1 %}
+        archive-template
+      {% else %}
+        home-template
+      {% endif %}
+    {% endif %}
+  {% endcapture%}
+
+  <body class="{{ template | strip }} nav-closed">
+    {% include navigation.html %}
+
+    <div class="site-wrapper">
+      {% include header.html %}
+
+      <main id="content" class="content" role="main">
+        {{ content }}
+      </main>
+
+      {% if page.layout == 'post' %}{% include read-next.html %}{% endif %}
+
+      {% include footer.html %}
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="{{ "/assets/js/jquery.fitvids.js" | prepend: site.baseurl }}"></script>
+    <script type="text/javascript" src="{{ "/assets/js/index.js" | prepend: site.baseurl }}"></script>
+    {% if site.analytics %}{% include analytics.html %}{% endif %}
+  </body>
+</html>

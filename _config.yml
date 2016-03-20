@@ -1,0 +1,32 @@
+# Site settings
+title: Jasper
+logo: /images/logo.png
+description: Jasper National Park, the largest national park in the Canadian Rockies.
+baseurl: "/Jasper" # the subpath of your site, e.g. /blog
+url: http://pym.me # the base hostname & protocol for your site
+
+# Main header
+header:
+  text_shadow: 0 0 20px rgba(28, 47, 53, .8) # CSS text-shadow
+
+# Navigation
+navigation:
+  - slug: /README.html
+    label: Jasper
+
+# Services (all are optional)
+analytics: UA-1234567-8 # Google Analytics tracking ID
+disqus: jasper-theme    # Disqus shortname
+facebook_l10n: en_US    # Your locale (en_US, fr_FR, etc.)
+twitter: JasperTheme    # Website's Twitter username (without the '@')
+
+# Build settings
+exclude: [CNAME, Gemfile, Gemfile.lock]
+markdown: kramdown
+kramdown:
+  input: GFM # Enable GitHub Flavored Markdown
+
+# Plugins
+gems: [jekyll-paginate]
+paginate: 5 # Post excerpts by page
+paginate_path: "/page/:num" # Default was "/page:num/"

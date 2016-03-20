@@ -1,0 +1,8 @@
+jasper: # Author key. Must be the same as the slug (next line)
+  slug: jasper # Must be the same as the author key (previous line) [required]
+  name: Jasper # Doesn't need an explanation [required] [views: all]
+  bio: Hi! I'm Jasper, a National Park and also a Jekyll theme! # Short bio [optional] [views: post, author]
+  location: Alberta, Canada # [optional] [views: post, author]
+  twitter: JasperTheme # Twitter username (without the '@') [views: post, author]
+  github: Pym/Jasper #GitHub username or username/repository (without any '@'!) [optional] [views: post, author]
+  gravatar: 2483fd8c9446700e4dc7c2b26c2dd790 # MD5 hash of your Gravatar email [optional (but it's cool)]

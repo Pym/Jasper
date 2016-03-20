@@ -1,0 +1,25 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.name }}</title>
+  <subtitle>{{ site.short_description }}</subtitle>
+  <link href="{{ site.url }}/atom.xml" rel="self"/>
+  <link href="{{ site.url }}"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ site.url }}</id>
+  {% for post in site.posts %}
+  {% assign author = site.data.authors | where:"name",post.author %}
+  <entry>
+    <title>{{ post.title }}</title>
+    <link href="{{ site.url }}{{ post.url }}"/>
+    <id>{{ site.url }}{{ post.id }}</id>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <content type="html">{{ post.content | xml_escape }}</content>
+    <author>
+      <name>{{ author[0].name }}</name>
+    </author>
+  </entry>
+  {% endfor %}
+</feed>

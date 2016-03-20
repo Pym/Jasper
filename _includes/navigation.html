@@ -1,0 +1,13 @@
+<div class="nav">
+  <h3 class="nav-title">Menu</h3>
+  <a href="#" class="nav-close">
+    <span class="hidden">Close</span>
+  </a>
+  <ul>
+  {% for item in site.navigation %}
+    <li class="nav-{{ item.slug }}{% if item.slug == page.name %} nav-current{% endif %}" role="presentation"><a href="{{ item.slug | prepend: site.baseurl }}">{{ item.label }}</a></li>
+  {% endfor %}
+  </ul>
+  <a class="subscribe-button icon-feed" href="{{ '/atom.xml' | prepend: site.baseurl }}">Subscribe</a>
+</div>
+<span class="nav-cover"></span>

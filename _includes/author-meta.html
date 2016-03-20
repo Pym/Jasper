@@ -1,0 +1,17 @@
+<div class="author-meta">
+{% if author.location %}
+  <span class="author-location icon-location">{{ author.location }}</span>
+{% endif %}
+{% if author.website %}
+  <span class="author-link icon-link"><a href="{{ website }}"> {{ author.website }}</a></span>
+{% endif %}
+{% if author.twitter %}
+  <span class="author-link icon-twitter"><a href="https://twitter.com/{{ author.twitter }}"> {{ author.twitter }}</a></span>
+{% endif %}
+{% if author.github %}
+  <span class="author-link icon-github"><a href="https://github.com/{{ author.github }}"> {{ author.github }}</a></span>
+{% endif %}
+{% if include.stats %}
+  <span class="author-stats"><i class="icon-stats"></i> {{ include.stats }} articles</span>
+{% endif %}
+</div>

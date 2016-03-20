@@ -1,0 +1,22 @@
+<header class="main-header post-head {% if page.cover %}" style="background-image: url({{ site.baseurl | append: page.cover }}){% else %}no-cover{% endif %}">
+
+  <nav class="main-nav {% if page.cover %}overlay{% endif %} clearfix">
+  {% if site.logo %}
+    <a class="blog-logo" href="{{ site.url }}">{% include site-logo.html %}</a>
+  {% endif %}
+
+  {% if site.navigation %}
+    <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+  {% endif %}
+  </nav>
+
+{% if page.layout == 'default' and page.post_class == nil %}
+  <div class="vertical">
+    <div class="main-header-content inner">
+      <h1 class="page-title">{{ site.title }}</h1>
+      <h2 class="page-description">{% if site.description %}{{ site.description }}{% endif %}</h2>
+    </div>
+  </div>
+  <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+{% endif %}
+</header>
