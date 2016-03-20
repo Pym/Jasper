@@ -31,6 +31,10 @@
       {% include footer.html %}
     </div>
 
+    {% if site.disqus == 'jasper-theme' %}
+    <a class="github-fork-ribbon right-bottom fixed" href="https://github.com/Pym/Jasper" title="Fork me on GitHub">Fork me on GitHub</a>
+    {% endif %}
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script type="text/javascript" src="{{ "/assets/js/jquery.fitvids.js" | prepend: site.baseurl }}"></script>
     <script type="text/javascript" src="{{ "/assets/js/index.js" | prepend: site.baseurl }}"></script>
