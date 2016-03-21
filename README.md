@@ -1,6 +1,6 @@
 Jekyll port of [Casper](https://github.com/TryGhost/Casper), the [Medium](https://medium.com/)-like [Ghost](https://github.com/TryGhost/Ghost) default's theme.
 
-![Jasper Screenshot](images/screenshot.png)
+![Jasper Screenshot](images/screenshot.jpg)
 
 ## Demo
 
