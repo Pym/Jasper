@@ -2,7 +2,7 @@
 
   <nav class="main-nav {% if page.cover %}overlay{% endif %} clearfix">
   {% if site.logo %}
-    <a class="blog-logo" href="{{ site.url }}">{% include site-logo.html %}</a>
+    <a class="blog-logo" href="{{ site.url | append: site.baseurl }}">{% include site-logo.html %}</a>
   {% endif %}
 
   {% if site.navigation %}
