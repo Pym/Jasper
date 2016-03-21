@@ -1,9 +1,3 @@
----
-layout: page
-title: Jasper
-image: /images/covers/welcome.jpg
-excerpt: Jekyll port of Casper, the Medium-like Ghost default’s theme.
----
 Jekyll port of [Casper](https://github.com/TryGhost/Casper), the [Medium](https://medium.com/)-like [Ghost](https://github.com/TryGhost/Ghost) default's theme.
 
 ![Jasper Screenshot](images/screenshot.png)
@@ -50,8 +44,6 @@ Dependency versions :
 
 Match GitHub Pages as of 03/20/2016.
 
----
-
 ## Philosophy
 
 Jasper doesn't introduce anything new. It's a DRY port from [Casper](https://github.com/TryGhost/Casper) to [Jekyll/Liquid templates](https://jekyllrb.com/docs/templates/).
@@ -77,11 +69,7 @@ Original files from Casper used by Jasper:
 
 The only add-on so far is the addition of the GitHub icon – grabbed from [GitHub Octicons](https://octicons.github.com/) – to the `casper-icons` font. This was possible thanks to the [IcoMoon App](https://icomoon.io/app/)!
 
----
-
 ## Jasper Features
-
----
 
 ### Atom Feed
 
@@ -89,27 +77,19 @@ Jekyll's default theme has already its RSS 2/Atom [`feed.xml`](https://github.co
 
 Let's KISS with Jasper's [`atom.xml`](https://github.com/Pym/Jasper/blob/gh-pages/atom.xml), based on this [Wikipedia example](https://en.wikipedia.org/wiki/Atom_(standard)#Atom_1.0_and_IETF_standardization).
 
----
-
 ### Code Snippet Highlighting
 
 Documentation: [Templates - Code Snippet Highlighting (Jekyll)](https://jekyllrb.com/docs/templates/#code-snippet-highlighting)
 
 Made possible with [`_syntax-highlighting.scss`](https://github.com/Pym/Jasper/blob/gh-pages/_sass/_syntax-highlighting.scss) from Jekyll's default theme.
 
----
-
 ### Covers
 
 Just like the original Casper, you can use [covers](/images/covers/welcome.jpg) easily with Jasper too!
 
----
-
 ### Navigation
 
 A responsive menu, showing from the right and featuring a subscribe button. Easily configurable in [`_config.yml`](#full-configyml-example) .
-
----
 
 ### Pagination
 
@@ -120,8 +100,6 @@ Customizable pagination system thanks to [jekyll-paginate](https://github.com/je
 #### Limitations
 
 Pagination **only works on the index**. This is a limitation of jekyll-paginate. We could use [octopress-paginate](https://github.com/octopress/paginate) – which is basically a drop in replacement – but it's not part of [GitHub Pages](https://pages.github.com/versions/) yet ([issue on the subject](https://github.com/github/pages-gem/issues/257)).
-
----
 
 ### Multiple Authors
 
@@ -136,8 +114,6 @@ Your [Gravatar](https://en.gravatar.com/) will be displayed every time your auth
 A page, with author information – name, bio, pictures and links – listing the author's posts.
 
 The not-so-nice part: you have to [create one page for every author](#create-the-corresponding-author-file).
-
----
 
 ### Disqus Comments
 
@@ -157,8 +133,6 @@ disable_comments: true
 ---
 ```
 
----
-
 ### Facebook Open Graph
 
 Documentation: [The Open Graph protocol](http://ogp.me/)
@@ -172,8 +146,6 @@ Facebook metas from `header.html`:
 <meta property="og:description" content="{{ description }}" />
 {{ "{% page.image " }}%}<meta property="og:image" content="{{ image }}" />{{ "{% endif " }}%}
 ```
-
----
 
 ### Twitter Summary Card
 
@@ -193,11 +165,7 @@ Twitter metas from `header.html`:
 {{ "{% endif " }}%}
 ```
 
----
-
 ## Jasper Customization
-
----
 
 ### Site Cover
 
@@ -209,8 +177,6 @@ layout: default
 cover: /images/covers/jasper.jpg
 ---
 ```
-
----
 
 ### Post Covers
 
@@ -227,8 +193,6 @@ author: jasper
 cover: /images/covers/welcome.jpg # Header cover [optional]
 ---
 ```
-
----
 
 ### Full Config Example
 
@@ -268,8 +232,6 @@ gems: [jekyll-paginate]
 paginate: 5 # Post excerpts by page
 paginate_path: "/page/:num" # Default was "/page:num/"
 ```
-
----
 
 ### Add an Author
 
@@ -312,8 +274,6 @@ author: jasper
 
 Replace every `Jasper` and `jasper` occurrences with your own author name and slug... and you are done!
 
----
-
 ## Thanks
 - [@parkr](https://github.com/parkr) for making [Jekyll](https://jekyllrb.com/)
 - The GitHub Team for making [GitHub Pages](https://pages.github.com/) 💓
@@ -322,13 +282,9 @@ Replace every `Jasper` and `jasper` occurrences with your own author name and sl
   - [https://unsplash.com/photos/MP8gUVg2bMQ](https://unsplash.com/photos/MP8gUVg2bMQ)
   - [https://unsplash.com/photos/_8gWAP_GRzk](https://unsplash.com/photos/_8gWAP_GRzk)
 
----
-
 ## TODO
 
 - [ ] Category/Tag Page: I don't use those, feel free to work on it if you think it can be usefull! 😄
-
----
 
 ## Contributing
 
@@ -337,8 +293,6 @@ Replace every `Jasper` and `jasper` occurrences with your own author name and sl
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
-
----
 
 ## License
 
