@@ -139,13 +139,19 @@ Documentation: [The Open Graph protocol](http://ogp.me/)
 
 Facebook metas from `header.html`:
 
+<!---
+{% raw %}
+-->
 ```html
 <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="{{ title }}" />
 <meta property="og:description" content="{{ description }}" />
-{{ "{% page.image " }}%}<meta property="og:image" content="{{ image }}" />{{ "{% endif " }}%}
+{% page.image %}<meta property="og:image" content="" />{% endif %}
 ```
+<!---
+{% endraw %}
+-->
 
 ### Twitter Summary Card
 
@@ -155,15 +161,21 @@ You must set the `twitter` variable in [`_config.yml`](#full-configyml-example) 
 
 Twitter metas from `header.html`:
 
+<!---
+{% raw %}
+-->
 ```html
-{{ "{% if site.twitter " }}%}
+{% if site.twitter %}
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@{{ site.twitter }}">
 <meta name="twitter:title" content="{{ title }}">
 <meta name="twitter:description" content="{{ description }}">
-{{ "{% page.image " }}%}<meta name="twitter:image" content="{{ image }}">{{ "{% endif " }}%}
-{{ "{% endif " }}%}
+{% page.image %}<meta name="twitter:image" content="">{% endif %}
+{% endif %}
 ```
+<!---
+{% endraw %}
+-->
 
 ## Jasper Customization
 
@@ -262,15 +274,21 @@ $ php -r 'echo md5(strtolower(trim("your.author@email.com")));'
 
 We **must** name our new author's page the same way. For our example's author, `jasper` is the author key that we defined earlier in `_data/authors.yml`. So in this this case the file will be  `author/jasper.html`:
 
+<!---
+{% raw %}
+-->
 ```liquid
 ---
 layout: author
 title: Jasper's Posts
 author: jasper
 ---
-{{ "{% assign posts = site.posts | where: 'author','jasper' " }}%}
-{{ "{% include loop.html posts=posts " }}%}
+{% assign posts = site.posts | where: 'author','jasper' %}
+{% include loop.html posts=posts %}
 ```
+<!---
+{% endraw %}
+-->
 
 Replace every `Jasper` and `jasper` occurrences with your own author name and slug... and you are done!
 
