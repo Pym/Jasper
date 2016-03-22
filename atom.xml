@@ -3,18 +3,18 @@ layout: null
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>{{ site.name }}</title>
-  <subtitle>{{ site.short_description }}</subtitle>
-  <link href="{{ site.url }}/atom.xml" rel="self"/>
-  <link href="{{ site.url }}"/>
-  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <title>{{ site.title }}</title>
+  <subtitle>{{ site.description }}</subtitle>
+  <link href="{{ '/atom.xml' | prepend: site.baseurl | prepend: site.url }}" rel="self"/>
+  <link href="{{ site.baseurl | prepend: site.url }}"/>
   <id>{{ site.url }}</id>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
   {% for post in site.posts %}
-  {% assign author = site.data.authors | where:"name",post.author %}
+  {% assign author = site.data.authors | where:'name', post.author %}
   <entry>
     <title>{{ post.title }}</title>
-    <link href="{{ site.url }}{{ post.url }}"/>
-    <id>{{ site.url }}{{ post.id }}</id>
+    <link href="{{ post.url | prepend: site.baseurl | prepend: site.url }}"/>
+    <id>{{ post.id | prepend: site.baseurl | prepend: site.url }}</id>
     <updated>{{ post.date | date_to_xmlschema }}</updated>
     <content type="html">{{ post.content | xml_escape }}</content>
     <author>
