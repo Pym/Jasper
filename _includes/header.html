@@ -1,4 +1,4 @@
-<header class="main-header post-head {% if page.cover %}" style="background-image: url({{ site.baseurl | append: page.cover }}){% else %}no-cover{% endif %}">
+<header class="main-header {{ include.header_class }}{% if page.cover %}" style="background-image: url({{ site.baseurl | append: page.cover }}){% else %} no-cover{% endif %}">
 
   <nav class="main-nav {% if page.cover %}overlay{% endif %} clearfix">
   {% if site.logo %}
