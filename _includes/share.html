@@ -1,7 +1,7 @@
 {% assign url = page.url | prepend: site.baseurl | prepend: site.url %}
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" href="http://twitter.com/share?text={{page.title}}&amp;url={{ url }}"
+  <a class="icon-twitter" href="http://twitter.com/share?text={{ page.title | cgi_escape }}&amp;url={{ url }}"
   onclick="PopupCenter(this.href, 'twitter-share', 550, 235);return false;">
     <span class="hidden">Twitter</span>
   </a>
