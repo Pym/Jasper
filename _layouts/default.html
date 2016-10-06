@@ -22,9 +22,7 @@
     <div class="site-wrapper">
       {% include header.html header_class=layout.header_class %}
 
-      <main id="content" class="content" role="main">
-        {{ content }}
-      </main>
+      {{ content }}
 
       {% if page.layout == 'post' %}{% include read-next.html %}{% endif %}
 

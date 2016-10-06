@@ -3,48 +3,50 @@ layout: default
 header_class: post-head
 post_class: post-template
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <section class="post-meta">
-      <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
-      {% if page.categories.size > 0 %}
-      {{ page.categories | array_to_sentence_string | prepend: 'on ' }}
-      {% endif %}
+<main class="content" role="main">
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <section class="post-meta">
+        <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
+        {% if page.categories.size > 0 %}
+        {{ page.categories | array_to_sentence_string | prepend: 'on ' }}
+        {% endif %}
+      </section>
+    </header>
+
+    <section class="post-content">
+      {{ content }}
     </section>
-  </header>
 
-  <section class="post-content">
-    {{ content }}
-  </section>
-
-  <footer class="post-footer">
-    {% include author.html %}
-    {% include share.html %}
-    {% if site.disqus and page.disable_comments != true %}
-    <div id="disqus_thread"></div>
-    <script>
-      var disqus_config = function () {
-        {% assign canonical_url = page.url | preprend: site.baseurl | prepend: site.url %}
-        this.page.url = '{{ canonical_url }}';
-        this.page.identifier = '{{ page.url }}';
-        this.page.title = '{{ page.title }}';
-      };
-      (function() {
-        var d = document, s = d.createElement('script');
-        s.src = '//{{ site.disqus }}.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-      })();
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/{{ site.facebook_l10n }}/all.js#xfbml=1";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-    {% endif %}
-  </footer>
-</article>
+    <footer class="post-footer">
+      {% include author.html %}
+      {% include share.html %}
+      {% if site.disqus and page.disable_comments != true %}
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+          {% assign canonical_url = page.url | preprend: site.baseurl | prepend: site.url %}
+          this.page.url = '{{ canonical_url }}';
+          this.page.identifier = '{{ page.url }}';
+          this.page.title = '{{ page.title }}';
+        };
+        (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//{{ site.disqus }}.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/{{ site.facebook_l10n }}/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+      {% endif %}
+    </footer>
+  </article>
+</main>
